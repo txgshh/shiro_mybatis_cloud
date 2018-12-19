@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="Thymeleaf"
+	xmlns:shiro="http://www.pollix.at/thymeleaf/shiro">
+
+<head>
+<title>index</title>
+<!-- <link href="/css/style.css" rel="stylesheet" type="text/css" media="all" /> -->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script>
+	$(document).ready(function(c) {
+		/* $('.alert-close').on('click', function(c) {
+			$('.message').fadeOut('slow', function(c) {
+				$('.message').remove();
+			});
+		}); */
+	});
+</script>
+</head>
+<body>
+	Hello, <shiro:principal/>, how are you today?
+	<p shiro:hasAllPermissions="userInfo:view, userInfo:add"><!-- 权限与判断 -->
+ 
+You can see or add users.
+ 
+</p>
+	登录成功
+</body>
+</html>

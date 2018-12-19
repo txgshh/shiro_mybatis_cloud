@@ -1,0 +1,22 @@
+eureka:
+    client:
+        serviceUrl:
+            defaultZone: http://localhost:8090/eureka/
+server:
+    port: 8091
+spring:
+    application:
+        name: gas-cloud-user
+    datasource:
+      driver-class-name: com.mysql.jdbc.Driver
+      url: jdbc:mysql://rm-uf6ok2fs833hty0bmqo.mysql.rds.aliyuncs.com:3306/xitonggas?serverTimezone=UTC
+      username: xgj
+      password: 1994221abcA
+mybatis:
+  mapper-locations: classpath:mybatis/mapper/*.xml
+  type-aliases-package: com.xgjgas.gascloud.com.yphx.domain
+#登录验证码是否开启[0:不适用验证码; 1:同一用户验证失败3次后开启验证码; 2:总是使用验证码]
+shiro.jcaptcha.enable.status: 2
+#验证码验证失败后的跳转地址
+shiro.jcaptcha.error.url: /login?jcaptchaError=1
+    
